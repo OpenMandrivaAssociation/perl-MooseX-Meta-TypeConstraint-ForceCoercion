@@ -1,20 +1,21 @@
-%define module   MooseX-Meta-TypeConstraint-ForceCoercion
-%define version  0.01
-%define release  %mkrel 2
+%define upstream_name    MooseX-Meta-TypeConstraint-ForceCoercion
+%define upstream_version 0.01
 
-Name:       perl-%{module}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+License:    GPL+ or Artistic
 Group:      Development/Perl
-Summary:    No summary found
-Url:        http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/MooseX/%{module}-%{version}.tar.gz
+Summary:    Force coercion when validating type constraints
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/MooseX/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Moose)
 BuildRequires: perl-namespace-autoclean
 BuildRequires: perl-namespace-clean
 BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This class allows to wrap any 'Moose::Meta::TypeConstraint' in a way that
@@ -22,7 +23,7 @@ will force coercion of the value when checking or validating a value
 against it.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -43,5 +44,4 @@ rm -rf %buildroot
 %doc Changes LICENSE README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 

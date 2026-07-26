@@ -1,15 +1,13 @@
 %define upstream_name    MooseX-Meta-TypeConstraint-ForceCoercion
-%define upstream_version 0.01
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	0.01
+Release:	7
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	Force coercion when validating type constraints
 Url:		https://metacpan.org/dist/MooseX-Meta-TypeConstraint-ForceCoercion
-Source0:	https://cpan.metacpan.org/authors/id/F/FL/FLORA/MooseX-Meta-TypeConstraint-ForceCoercion-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/F/FL/FLORA/MooseX-Meta-TypeConstraint-ForceCoercion-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -24,7 +22,7 @@ will force coercion of the value when checking or validating a value
 against it.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -48,8 +46,7 @@ make test
 
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.10.0-1mdv2011.0
 + Revision: 401625
-- rebuild using %%perl_convert_version
-- fixed license field
+- rebuild using %0.01 fixed license field
 
 * Fri May 15 2009 Jérôme Quelin <jquelin@mandriva.org> 0.01-2mdv2010.0
 + Revision: 375940

@@ -1,13 +1,14 @@
 %define upstream_name    MooseX-Meta-TypeConstraint-ForceCoercion
+%define upstream_version 0.01
 Name:		perl-%{upstream_name}
 Version:	0.01
-Release:	7
+Release:	1
 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Summary:	Force coercion when validating type constraints
 Url:		https://metacpan.org/dist/MooseX-Meta-TypeConstraint-ForceCoercion
-Source0:	https://cpan.metacpan.org/authors/id/F/FL/FLORA/MooseX-Meta-TypeConstraint-ForceCoercion-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/F/FL/FLORA/MooseX-Meta-TypeConstraint-ForceCoercion-0.01.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -38,25 +39,4 @@ make test
 %doc Changes LICENSE README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-%changelog
-* Mon Apr 18 2011 Funda Wang <fwang@mandriva.org> 0.10.0-2mdv2011.0
-+ Revision: 655068
-- rebuild for updated spec-helper
-
-* Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.10.0-1mdv2011.0
-+ Revision: 401625
-- rebuild using %0.01 fixed license field
-
-* Fri May 15 2009 Jérôme Quelin <jquelin@mandriva.org> 0.01-2mdv2010.0
-+ Revision: 375940
-- rebuild
-
-* Mon May 04 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.01-1mdv2010.0
-+ Revision: 371929
-- import perl-MooseX-Meta-TypeConstraint-ForceCoercion
-
-
-* Mon May 04 2009 cpan2dist 0.01-1mdv
-- initial mdv release, generated with cpan2dist
 
